@@ -1,7 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const index_1 = require("../src/packages/CF/index");
-const exportcv = new index_1.Cuotafija(12, 42, 1000, 3, 11, 2022);
+const index_2 = require("../src/packages/CV/index");
+const index_3 = require("../src/packages/PG/index");
+const exportcf = new index_1.Cuotafija(12, 42, 1000, 3, 11, 2022);
+const exportcv = new index_2.CuotaVariable(12, 42, 1000);
+const exppg = new index_3.Periodos_de_Gracia(12, 42, 1000, 5);
 console.log('hola mundo, loco');
-console.log(exportcv.cuota);
+exportcf.table();
 exportcv.table();
+exppg.table();
