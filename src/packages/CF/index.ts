@@ -25,7 +25,7 @@ export class Cuotafija {
         
         return cuota ;
     }    
-    table(): any{
+    public table(): any{
         let interesMensual = this.AnualMensual( this.interes, this.plazo );
 
         for (let i = 0; i < this.plazo; i++) {

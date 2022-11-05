@@ -8,8 +8,7 @@ export class Periodos_de_Gracia {
     constructor(
         public plazo: number = 12,
         public interes: number = 18,
-        public prestamo: number = 100000,
-        public amortizacion: number = 0
+        public prestamo: number = 100000
     ){};
     private AnualMensual( interes: number, plazo: any ): number {
         const INTERESANUAL = interes / 100;
@@ -36,9 +35,12 @@ export class Periodos_de_Gracia {
             this.abono[i]= {abono: Number(( this.Interes[i].interes).toFixed(2)) }
             this.saldo[i] = {saldo: Number((this.Interes[i].interes +this.saldo[i-1].saldo).toFixed(2))}
         }
-        for(let i = this.amortizacion; i < this.plazo; i++){
+        for(let i = this.plazo -1 ; i < this.plazo; i++){
             this.cuota[i] = {cuota:Number((this.Interes[i].interes + this.saldo[i-1].saldo).toFixed(2)) }
             this.saldo[i]= {saldo: this.saldo[i].saldo - this.cuota[i].cuota }
+        }
+        for ( let i = 1; i < 5; i++){
+
         }
 
         this.data.push(this.No, this.cuota, this.Interes, this.abono, this.saldo);
