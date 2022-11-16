@@ -1,43 +1,50 @@
-export class MetodoAmericano{
-    private No: any = [];
-    private cuota: any = [];
-    private Interes: any = [];
-    private abono: any = [];
-    private saldo: any = [];
-    public data: any = [];
-    constructor(
+import { credit } from '../../gobal/global';
+export class MetodoAmericano extends credit {
+    private _No: any = [];
+    private _cuota: any = [];
+    private _Interes: any = [];
+    private _abono: any = [];
+    private _saldo: any = [];
+    public _data: any = [];
+
+    static instance: MetodoAmericano | null = null;
+    private constructor(
         public plazo:number  = 12, 
         public interes: number  = 18, 
         public prestamo:number  = 100000,
-        public liquidacion: number = 0
-    ){};
-    private AnualMensual( interes: number, plazo: any ): number {
-        const INTERESANUAL = interes / 100;
-        return Number((Math.pow(INTERESANUAL + 1, 1 / plazo) - 1).toFixed(3));
-    }
-    public table = ()=>{
+        public liquidacion: number = 0,
+    ){
+        super( plazo,interes,prestamo);
+    };
+
+    public data () {
         let interesMensual = this.AnualMensual( this.interes, this.plazo );
 
          for (let i = 0; i < this.plazo; i++) {
             var no = 1+i;
-            this.No.push({no});
-            this.Interes.push({interes: Number((interesMensual * this.prestamo).toFixed(2))}); 
-            this.cuota.push({cuota: this.Interes[i].interes}); 
-            this.abono.push({abono:  0}); 
-            this.saldo.push({saldo: this.prestamo}); 
+            this._No.push({no});
+            this._Interes.push({interes: Number((interesMensual * this.prestamo).toFixed(2))}); 
+            this._cuota.push({cuota: this._Interes[i].interes}); 
+            this._abono.push({abono:  0}); 
+            this._saldo.push({saldo: this.prestamo}); 
             }
         for(let i = this.liquidacion; i < this.plazo; i++){
-            this.cuota[i] = {cuota: this.saldo[i].saldo + this.Interes[i].interes};
-            this.abono[i] = {abono: this.saldo[i].saldo};
-            this.saldo[i] = {saldo: this.saldo[i].saldo - this.abono[i].abono};
+            this._cuota[i] = {cuota: this._saldo[i].saldo + this._Interes[i].interes};
+            this._abono[i] = {abono: this._saldo[i].saldo};
+            this._saldo[i] = {saldo: this._saldo[i].saldo - this._abono[i].abono};
         }
         for( let i = this.liquidacion + 1 ; i <= this.plazo; i++ ){
-             this.Interes[i] = {interes: 0};
-             this.abono[i] = {abono: 0};
-             this.cuota[i] = {cuota: 0};
+             this._Interes[i] = {interes: 0};
+             this._abono[i] = {abono: 0};
+             this._cuota[i] = {cuota: 0};
         }
-        this.data.push( this.No, this.cuota, this.Interes, this.abono, this.saldo);
-        console.log( this.data);
-        return this.data;
+        this._data.push( this._No, this._cuota, this._Interes, this._abono, this._saldo);
+        return this._data;
+    }
+    static create(plazo: number, interes:number, prestamo: number){
+        if (MetodoAmericano.instance === null) {
+            MetodoAmericano.instance = new MetodoAmericano(plazo, interes, prestamo);
+          }
+          return MetodoAmericano.instance;
     }
 } 

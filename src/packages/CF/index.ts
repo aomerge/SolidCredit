@@ -1,57 +1,59 @@
+import { credit } from '../../gobal/global';
 
-export class Cuotafija {
-    private No: any = [];
-    private cuota: any = [];
-    private Interes: any = [];
-    private abono: any = [];
-    private saldo: any = [];
-    public data: any = [];
-    constructor( 
-        public plazo:number  = 12, 
+export class Cuotafija extends credit {
+    private _No: any = [];
+    private _cuota: any = [];
+    private _interes: any = [];
+    private _abono: any = [];
+    private _saldo: any = [];
+    public _data: any = [];
+    static instance: Cuotafija | null = null;
+
+    private constructor( 
+        public plazo:number, 
         public interes: number  = 18, 
         public prestamo:number  = 100000,
-        private day: number ,
-        private month: number ,
-        private year: number 
-        ){};
-    private AnualMensual( interes: number, plazo: any ): number {
-        const INTERESANUAL = interes / 100;
-        return Number((Math.pow(INTERESANUAL + 1, 1 / plazo) - 1).toFixed(3));
-    }
-    private pagofijo( interes: number, prestamo: number, plazo: number ):number  {
-        const a = interes * prestamo;
-        const c = 1 - Math.pow(1 + interes, -plazo);
-        const cuota = a / c ;
-        
-        return cuota ;
-    }    
-    public table(): any{
+        ){
+            super(plazo,interes, prestamo)
+        };
+    public data(){
         let interesMensual = this.AnualMensual( this.interes, this.plazo );
 
         for (let i = 0; i < this.plazo; i++) {
             let pago: number  = 1 + i;
             let cut = Number((this.pagofijo(interesMensual, this.prestamo, this.plazo)).toFixed(2));
-            this.No.push( { pago } );
-            this.cuota.push({ cuota: cut } );
-            this.Interes.push({}); 
-            this.abono.push({}); 
-            this.saldo.push({});
+            this._No.push( { pago } );
+            this._cuota.push({ cuota: cut } );
+            this._interes.push({}); 
+            this._abono.push({}); 
+            this._saldo.push({});
           }
         
-        this.Interes[0] = { interes: Number((interesMensual * this.prestamo).toFixed(2)) };
-        this.abono[0] = { abono: Number((this.cuota[0].cuota - this.Interes[0].interes).toFixed(2)) };
-        this.saldo[0] = { saldo: this.prestamo - this.abono[0].abono };          
+        this._interes[0] = { interes: Number((interesMensual * this.prestamo).toFixed(2)) };
+        this._abono[0] = { abono: Number((this._cuota[0].cuota - this._interes[0].interes).toFixed(2)) };
+        this._saldo[0] = { saldo: this.prestamo - this._abono[0].abono };          
       
         for (let i = 1; i < this.plazo; i++) {
-        this.Interes[i] = { interes: Number((this.saldo[i - 1].saldo * interesMensual).toFixed(2)) };
-        this.abono[i] = { abono: Number((this.cuota[i].cuota - this.Interes[i].interes).toFixed(2)) };
-        this.saldo[i] = { saldo: Number((this.saldo[i - 1].saldo - this.abono[i].abono).toFixed(2)) };
+            this._interes[i] = { interes: Number((this._saldo[i - 1].saldo * interesMensual).toFixed(2)) };
+            this._abono[i] = { abono: Number((this._cuota[i].cuota - this._interes[i].interes).toFixed(2)) };
+            this._saldo[i] = { saldo: Number((this._saldo[i - 1].saldo - this._abono[i].abono).toFixed(2)) };
         }
-        this.data.push( this.No, this.cuota, this.Interes, this.abono, this.saldo);
-        console.log(this.data);
-        return this.data;
+        this._data.push( this._No, this._cuota, this._interes, this._abono, this._saldo);
+        return this._data;
 
     }
-
+    static create(plazo: number, interes:number, prestamo: number){
+        if (Cuotafija.instance === null) {
+            Cuotafija.instance = new Cuotafija(plazo, interes, prestamo);
+          }
+          return Cuotafija.instance;
+    }
+    public genereteReact() : void{
+        return(
+            console.log(this._data)
+        );
+    }
+    public generatejs() : void{
+        
+    }
 }
-

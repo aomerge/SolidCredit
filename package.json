@@ -1,5 +1,5 @@
 {
-  "name": "solid-crt",
+  "name": "solid-credit",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -9,6 +9,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx tsc && node dist/bin index.js",
+    "npx_dev" : "npx ts-node src/cv/index.ts ",
     "lint": "eslint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,5 +19,8 @@
   "devDependencies": {
     "eslint": "^8.26.0",
     "eslint-config-standard": "^17.0.0"
+  },
+  "bin": {
+    "solid" : "./dist/bin/index.js"
   }
 }
