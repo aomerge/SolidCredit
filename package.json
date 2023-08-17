@@ -1,26 +1,39 @@
 {
   "name": "solid-credit",
-  "private": true,
-  "version": "1.0.0",
+  "private": false,
+  "version": "1.2.0",
   "description": "",
   "workspaces": [
-    "./src/packages/*"
+    "./src/test",
+    "./src/global",
+    "./src/app/*"
   ],
   "main": "index.js",
   "scripts": {
     "dev": "npx tsc && node dist/bin index.js",
-    "npx_dev" : "npx ts-node src/cv/index.ts ",
+    "buils": "npx tsc ./src/global/**/*.ts && npx tsc ./bin/**/*.ts",
+    "npx_dev": "npx ts-node src/cv/index.ts ",
     "lint": "eslint",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test-ts": "mocha -r ts-node/register './src/test/bin/**/*.test.ts'",
+    "test": "mocha -r ts-node/register ./src/**/*.test.ts "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:A-9571-G/solid-credit.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "eslint": "^8.26.0",
-    "eslint-config-standard": "^17.0.0"
-  },
+  "author": "'Angel Ortega <codenode.ortega@gmail.com>",
+  "license": "MIT",
   "bin": {
-    "solid" : "./dist/bin/index.js"
+    "solid": "./dist/bin/index.js"
+  },
+  "devDependencies": {
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.1"
+  },
+  "dependencies": {
+    "pg": "^8.11.2"
   }
 }

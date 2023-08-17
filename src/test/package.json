@@ -1,0 +1,28 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "This package contains unit tests to ensure the proper functioning of the different modules in our project",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "test-model": "mocha -r ts-node/register ./model/americanPayment.test.ts ./model/fixedPayment.test.ts ./model/gracePeriods.test.ts ./model/variablePayment.test.ts",
+    "test-model-fixed": "mocha -r ts-node/register ./model/fixedPayment.test.ts",
+    "test-model-American": "mocha -r ts-node/register ./model/AmericanPayment.test.ts",
+    "test-model-grace": "mocha -r ts-node/register ./model/gracePeriods.test.ts",
+    "test-model-variable": "mocha -r ts-node/register ./model/variablePayment.test.ts",
+    "test-utils-customRounding": "mocha -r ts-node/register ./utils/customRounding.test.ts",
+    "test-utils-convertToDecimal": "mocha -r ts-node/register ./utils/convertToDecimal.test.ts",
+    "test-bin": "mocha -r ts-node/register ./bin/**/*.test.ts"
+  },
+  "author": "test",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.3.5",
+    "@types/chai-as-promised": "^7.1.5",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^20.4.9",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^10.2.0"
+  }
+}
