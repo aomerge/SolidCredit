@@ -1,9 +1,6 @@
 import { expect } from "chai";
 import { Solid } from "../../../bin/Solid.bin";
-import chai from "chai";
-import chaiAsPromised from "chai-as-promised";
 import { PaymentDetail } from "../../global/model/type/PaymentDetai.type";
-chai.use(chaiAsPromised);
 
 describe("Solid", () => {
   describe("fixedPayment", () => {

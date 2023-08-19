@@ -1,35 +1,81 @@
 # Solid Credit
-Solid credit es una libreria de generacion de tablas de amortizaion de creditos, la cual permite generar tablas de amortizacion de creditos de tipo frances, aleman y americano.
+Solid Credit is an advanced tool designed for the precise generation of loan amortization tables. This library encompasses a variety of loan structures, including the French, German, and American systems, in addition to offering options for grace periods.
 
-## Instalacion
-Para instalar la libreria se debe ejecutar el siguiente comando:
+## Installation
+To install the library, run the following command:
 ```bash
 npm i solid-credit
 ```
 
-## Uso
-Para usar la libreria se debe importar la clase SolidCrt y crear una instancia de la misma, la cual recibe como parametros el monto del credito, la tasa de interes, el plazo del credito y el tipo de cuota.
-```python
-from solid_crt import SolidCrt
-
-solid_crt = SolidCrt(1000000, 0.1, 12, 'frances')
+## Use
+To use the library, you must import the Solid class and create an instance of it, which takes as parameters the loan amount, the interest rate, the loan term, and the installment type.
+### Fixed Payment
+```javascript
+import { Solid } from 'solid-credit'
+// structure : (plazo, InteresAnual, Preteamo)
+const data = Solid.fixedPayment((plazo), (InteresAnual), (Preteamo));
+const data2 = Solid.fixedPayment(12, 40, 1000);// return array
 ```
-Una vez creada la instancia se debe llamar al metodo get_table, el cual retorna una lista de diccionarios con la informacion de la tabla de amortizacion.
-```python
-table = solid_crt.get_table()
+### Variable Payment
+```javascript
+import { Solid } from 'solid-credit'
+// whith basepoint or warrning pais
+const data = Solid.variablePayment((plazo = 12), 15, 1000, let basepoint = 300)// return array
+// Normal
+const data = Solid.variablePayment((plazo = 12), 15, 1000)// return array
+```
+### grace period
+```javascript
+// Grace period
+import { Solid } from 'solid-credit'
+const data = Solid.gracePeriod((plazo = 12), 15, 1000, 3);// return array
+
+// Grace period with fixed payment
+import { Solid } from 'solid-credit'
+const data = Solid.graceFixedPayment((plazo = 12), 15, 1000, 3) // return Promise<array>
+```
+### American method
+```javascript
+import { Solid } from 'solid-credit'
+const data = Solid.americanMethod((plazo = 12), 15, 1000)// return array
+```
+### Structure of Array
+```javascript
+// Structure of array
+[
+    {
+        month: 1,
+        payment: 0,
+        interest: 0,
+        Principal: 0,
+        balance: 0
+    }
+]
 ```
 
-## Ejemplo
-```python
-from solid_crt import SolidCrt
+## Example
+```javascript
+from {solid_crt} import SolidCrt
 
-solid_crt = SolidCrt(1000000, 0.1, 12, 'frances')
-table = solid_crt.get_table()
+const data = SolidCrt.fixedPayment(plazo = 12, 15, 1000);
+
+const tbody = document.querySelector('#paymentsTable tbody');
+
+const rows = data.map(item => {
+    return `<tr>
+            <td>${item.month}</td>
+            <td>${item.payment.toFixed(2)}</td>
+            <td>${item.interest.toFixed(2)}</td>
+            <td>${item.principal.toFixed(2)}</td>
+            <td>${item.balance.toFixed(2)}</td>
+        </tr>´
+}).join('');
+tbody.innerHTML = rows;
 
 ```
-## Contribuciones
-Las contribuciones son bienvenidas, para ello se debe crear un pull request con la nueva funcionalidad o arreglo de bug.
+## Contribution
+Contributions are welcome; to do so, you must create a pull request with the new feature or bug fix
 
-## Licencia
-Licencia 
+## Licence
+Licence
 [MIT](https://choosealicense.com/licenses/mit/)

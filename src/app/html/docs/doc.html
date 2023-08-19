@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+        theme: {
+            extend: {
+            }
+        }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+        .content-auto {
+            content-visibility: auto;
+        }
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>Document</title>
+</head>
+<body>
+    <main class="grid grid-cols-12  mb-[65px]">
+        <div class="flex col-start-1 gap-7 col-end-12">
+            <section class="p-5 mt-2 w-2/6 h-[91vh] ml-5 bg-red-300 rounded-md ">
+                <div class="flex">
+                    <div class="">
+                        <div class="logo">
+                            <p class="font-bold text-xl ">
+                                <a href="">
+                                    / docs
+                                </a>
+                            </p>
+                        </div>
+                        <nav class="nav-saidbar mt-5">
+                            <ul role="list" class="ga abo">
+                                <li class="mb-5">
+                                    <a href="#" class="w-full bg-red-400 p-2 rounded-md flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-8 mr-2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25">
+                                            </path>
+                                        </svg>
+                                        Dashboard
+                                    </a>
+                                </li>                                        
+                                <li class="mb-5">
+                                    <a href="#" class="w-full flex items-center">
+                                        <img src="../img/4614125.png" alt="" class="h-8 mr-2">
+                                        Fixed Payment
+                                    </a>
+                                </li>                        
+                                <li class="mb-5">
+                                    <a href="#" class="w-full flex items-center">
+                                        <img src="../img/bien.png" alt="" class="h-8 mr-2">
+                                        grace period
+                                    </a>
+                                </li>            
+                                <li class="mb-5">
+                                    <a href="#" class="w-full flex items-center">
+                                        <img src="../img/4614125.png" alt="" class="h-8 mr-2">
+                                        variable payment
+                                    </a>
+                                </li>         
+                                <li class="mb-5">
+                                    <a href="#" class="w-full flex items-center">
+                                        <img src="../img/modelo-de-negocio-de-suscripcion.png" alt="" class="h-8 mr-2">
+                                        American Method
+                                    </a>
+                                </li>                               
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <header class=" mb-9 grid grid-cols-12 w-full items-center justify-center">
+                    <div class="col-start-2 flex">            
+                        <button class="mr-5">English</button>
+                        <button>Spanish</button>
+                    </div>
+                    <nav class="flex col-start-3 col-end-11 justify-center">
+                        <svg style=" width: 2em;height: 3em;display: block;" viewBox="0 0 2 3" aria-hidden="true" class="text-white">
+                            <path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" class="fill-white"></path>
+                        </svg> 
+                        <ul style="height: 3em;" class="bg-white flex items-center ">
+                            <li class="ml-5" aria-current="page">
+                                <a href="../index.html" class="svelte-1u9z1tp">Home</a>
+                            </li> 
+                            <li class="ml-5 pointer">
+                                <a href="./docs/doc.html" class="svelte-1u9z1tp">docs</a>
+                            </li> 
+                            <li class="ml-5 mr-5 ">
+                                <a href="../calculate-credit/index.html" class="svelte-1u9z1tp">Credit Calculate</a>
+                            </li>
+                        </ul> 
+                        <svg style=" width: 2em;height: 3em;display: block;" viewBox="0 0 2 3" aria-hidden="true" >
+                            <path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" class="fill-white" ></path>
+                        </svg>
+                    </nav>
+                    <div class="grid justify-center w-full ">
+                        <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default">
+                            <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+                        </svg>
+                    </div>
+                </header>
+                <section class=" grid items-end w-full rounded-md border-zinc-950 border-2 p-5 ">
+                    <h1>Dashboard</h1>
+                    <p>en esta seccion se explica que es cada tipo de credito y en que consiste</p>
+                    <div class=" mt-5 p-5" >
+                        <h2> Fixed Payment </h2>
+                        <p>Credito en el tiempo // Sin datos aun, si quiere ver un ejemplo de como se veria, vaya a la seccion de calculo de credito</p>
+                        <button>Calculate</button>
+                    </div>
+                    <div class=" mt-5 p-5" >
+                        <h2> Fixed Payment </h2>
+                        <p>Credito en el tiempo // Sin datos aun, si quiere ver un ejemplo de como se veria, vaya a la seccion de calculo de credito</p>
+                        <button>Calculate</button>
+                    </div>
+                    <div class=" mt-5 p-5 " >
+                        <h2> Fixed Payment </h2>
+                        <p>Credito en el tiempo // Sin datos aun, si quiere ver un ejemplo de como se veria, vaya a la seccion de calculo de credito</p>
+                        <button>Calculate</button>
+                    </div>
+                    <div class=" mt-5 p-5" >
+                        <h2> Fixed Payment </h2>
+                        <p>Credito en el tiempo // Sin datos aun, si quiere ver un ejemplo de como se veria, vaya a la seccion de calculo de credito</p>
+                        <button>Calculate</button>
+                    </div>
+                    <!-- <h1 class="font-bold text-4xl mb-5 " >Fixed Payment</h1>
+                    <form class="rounded-md bg-red-300 pt-[6%] h-[350px] pb-[6%] grid grid-cols-8 p-5"  action="">
+                        <div class=" col-start-3 col-end-9  w-full flex gap-4">
+                            <section class="p-2">
+                                <label class="text-center" for="amount">Monto del Crédito</label>
+                                
+                                <input class="w-full mt-2 rounded-md" type="text" id="amount" onblur="formatCurrency(this)" onfocus="unformatCurrency(this)" id="amount" name="amount" required min="1" step="any" placeholder="Payment"">                                
+                            </section>
+                            <section class="p-2">
+                                <label for="interestRate">Tasa de Interés (anual %):</label>
+                                <input class="w-full mt-2 rounded-md" type="number" id="interestRate" name="interestRate" required min="0" step="0.01" placeholder="Interest">
+                            </section>
+                        </div>
+                        <div class="w-full col-start-3 col-end-9">
+                            <section class="p-2 w-full">
+                                <label for="term">Plazo (meses):</label>
+                                <input class="mt-2 w-full rounded-md" type="number" id="term" name="term" required min="1" placeholder="month">
+                            </section>
+                        </div>
+                        <div class="col-start-3 col-end-9">
+                            <button class="bg-orange-500 w-full p-2 rounded-md" type="">Calcular</button>
+                        </div>
+                    </form> -->
+                </section>
+            </section>
+        </div>
+    </main>
+    <footer class="w-full flex p-2 justify-center fixed left-0 right-0 bottom-0 bg-orange-500 ">
+        <p>© 2023 - 
+            <a href="https://github.com/AG-9571">ag9571</a> 
+        </p>
+    </footer>
+</body>
+</html>

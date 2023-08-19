@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+        theme: {
+            extend: {
+            }
+        }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+        .content-auto {
+            content-visibility: auto;
+        }
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>Solid Credit</title>
+</head>
+<body>
+    <header class="grid grid-cols-12 w-full items-center justify-center">
+        <div class="col-start-2 flex">            
+            <button class="mr-5">English</button>
+            <button>Spanish</button>
+        </div>
+        <nav class="flex col-start-3 col-end-11 justify-center">
+            <svg style=" width: 2em;height: 3em;display: block;" viewBox="0 0 2 3" aria-hidden="true" class="text-white">
+                <path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" class="fill-white"></path>
+            </svg> 
+            <ul style="height: 3em;" class="bg-white flex items-center ">
+                <li class="pointer ml-5" aria-current="page">
+                    <a href="./index.html" class="svelte-1u9z1tp">Home</a>
+                </li> 
+                <li class="ml-5">
+                    <a href="./docs/doc.html" class="svelte-1u9z1tp">docs</a>
+                </li> 
+                <li class="ml-5 mr-5">
+                    <a href="./calculate-credit/index.html" class="svelte-1u9z1tp">Credit Calculate</a>
+                </li>
+            </ul> 
+            <svg style=" width: 2em;height: 3em;display: block;" viewBox="0 0 2 3" aria-hidden="true" >
+                <path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" class="fill-white" ></path>
+            </svg>
+        </nav>
+        <div class="grid justify-center w-full ">
+            <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default">
+                <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+            </svg>
+        </div>
+    </header>
+    <main class="grid grid-cols-12 w-full mb-9">
+        <div class="grid w-full col-start-2 mt-5 col-end-13 items-center text-center justify-center overflow-hidden" >
+            <section class="flex h-96 mb-5 items-center">
+                <div class="w-1/2 text-justify mr-5" >
+                    <h1 class="mb-3 text-4xl italic font-bold">Solid credit</h1>
+                    <p class="mb-3">Solid Credit is an advanced tool designed for the precise generation of loan amortization tables. This library encompasses a variety of loan structures, including the French, German, and American systems, in addition to offering options for grace periods.</p>
+                    <div>
+                        <a href="./calculate-credit/index.html" class="button-2 bg-red-300 p-2 rounded-md" >Generate amortization</a>
+                        <a  class="button-2 bg-orange-500 p-2 rounded-md" href="./docs/doc.html">Docs</a>
+                    </div>
+                </div>
+                <div class=" w-1/2 overflow-hidden" >                    
+                    <img src="./img/img-woman-laptop.png" alt="">
+                </div>
+            </section>
+        </div>
+        <section class="grid w-full col-start-2 mt-5 col-end-12 items-center text-center justify-center">
+            <div class="p-5 bg-red-400 rounded-md">
+                <h1 class="font-bold text-xl mb-3">Features</h1>
+                <p>Experience streamlined financial planning at your fingertips. With Solid Credit, you can effortlessly navigate diverse loan scenarios, ensuring transparency and precision every step of the way. Whether you're an individual seeking clarity on repayments or a financial institution aiming for optimal client communication, our platform bridges the gap. Dive into a new era of financial understanding.</p>
+    
+            </div>
+            <div class=" mt-9 w-full gap-7 grid grid-cols-3 ">
+                <section class="bg-red-300 rounded-md p-7">
+                    <h1 class="mb-3">fixed Payment</h1>
+                    <p class="text-start mb-3" >Introduce una nueva dimensión en tus aplicaciones con nuestro módulo Pago Fijo. Dentro del ecosistema de Solid Credit, este paquete te permite integrar fácilmente cálculos de pagos fijos en cualquier proyecto. Así, tus usuarios pueden obtener montos constantes de reembolso sin preocuparse por las fluctuaciones del mercado o las variaciones en las tasas de interés.</p>
+                    <div class="w-full grid justify-start">
+                        <a href="./calculate-credit/index.html" class="text-end bg-white p-2 rounded-md" >View Example</a>
+                    </div>
+                </section>
+                <section class="bg-red-300 rounded-md p-7">
+                    <h1 class="mb-3">Períodos de Gracia</h1>
+                    <p class="text-start mb-3" >Navegar por el mundo financiero a menudo requiere flexibilidad. Entendiendo eso, Solid Credit introduce la opción de 'Períodos de Gracia'. Esto te permite tener un respiro temporal en tus pagos, dándote el margen necesario para ajustarte a nuevas circunstancias o simplemente planificar mejor tus finanzas. Con nuestro sistema, puedes calcular exactamente cómo estos períodos afectarán el total de tu préstamo y el plan de amortización.</p>
+                    <div class="w-full grid justify-start">
+                        <a href="./calculate-credit/index.html" class="text-end bg-white p-2 rounded-md" >View Example</a>
+                    </div>
+                </section>
+                <section class="bg-red-300 rounded-md p-7">
+                    <h1 class="mb-3">Método Americano</h1>
+                    <p class="mb-3">Navegar por el mundo financiero a menudo requiere flexibilidad. Entendiendo eso, Solid Credit introduce la opción de 'Períodos de Gracia'. Esto te permite tener un respiro temporal en tus pagos, dándote el margen necesario para ajustarte a nuevas circunstancias o simplemente planificar mejor tus finanzas. Con nuestro sistema, puedes calcular exactamente cómo estos períodos afectarán el total de tu préstamo y el plan de amortización.</p>
+                    <div class="w-full grid justify-start">
+                        <a href="./calculate-credit/index.html" class="text-end bg-white p-2 rounded-md" >View Example</a>
+                    </div>
+                </section>
+                <section class="bg-red-300 rounded-md p-7">
+                    <h1 class="mb-3">Pagos Variables</h1>
+                    <p class="text-start mb-3" >El mundo financiero es dinámico, y para aquellos que buscan adaptabilidad en sus planes de financiamiento, Solid Credit presenta la opción de 'Pagos Variables'. Este enfoque te permite ajustar los montos de tus pagos en función de condiciones cambiantes, ya sean tasas de interés fluctuantes, ingresos variables o cualquier otro factor determinante. Con nuestra herramienta, podrás anticipar y planificar estos cambios, asegurando que siempre estés al tanto de tus obligaciones y cómo estas se adaptan con el tiempo.</p>
+                    <div class="w-full grid justify-start">
+                        <a href="./calculate-credit/index.html" class="text-end bg-white p-2 rounded-md" >View Example</a>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+    <footer class="w-full flex p-2 justify-center fixed left-0 right-0 bottom-0 bg-orange-500 ">
+        <p>© 2023 - 
+            <a href="https://github.com/AG-9571">ag9571</a> 
+        </p>
+    </footer>
+</body>
+</html>

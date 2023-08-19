@@ -1,17 +1,17 @@
 {
   "name": "solid-credit",
   "private": false,
-  "version": "1.2.0",
+  "version": "2.0.1",
   "description": "",
   "workspaces": [
     "./src/test",
     "./src/global",
     "./src/app/*"
   ],
-  "main": "index.js",
+  "main": "./dist/bin/Solid.bin.js",
   "scripts": {
-    "dev": "npx tsc && node dist/bin index.js",
-    "buils": "npx tsc ./src/global/**/*.ts && npx tsc ./bin/**/*.ts",
+    "dev": "ts-node ./**/*",
+    "buils": "npx tsc -p ./src/global/tsconfig.json && npx tsc -p ./bin/tsconfig.bin.json ",
     "npx_dev": "npx ts-node src/cv/index.ts ",
     "lint": "eslint",
     "test-ts": "mocha -r ts-node/register './src/test/bin/**/*.test.ts'",
@@ -34,6 +34,5 @@
     "prettier": "^3.0.1"
   },
   "dependencies": {
-    "pg": "^8.11.2"
   }
 }
