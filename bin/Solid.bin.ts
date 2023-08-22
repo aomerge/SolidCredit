@@ -5,18 +5,14 @@ import { AmericanPayment } from "../src/global/model/calculateCredit/americanPay
 import { PaymentDetail } from "../src/global/model/type/PaymentDetai.type";
 
 export class Solid {
-  private static NewamericanPayment: AmericanPayment;
-  private static Newgraceperiod: gracePeriods;
-  private static NewvariablePayment: VariablePayment;
-  private static NewfixedPayment: fixedPayment;
 
   static fixedPayment(
     plazo: number,
     interes: number,
     prestamo: number
   ): PaymentDetail[] {
-    this.NewfixedPayment = new fixedPayment(plazo, interes, prestamo);
-    const data = this.NewfixedPayment.GetPaymentDetails();
+    const NewfixedPayment: fixedPayment = new fixedPayment(plazo, interes, prestamo);
+    const data = NewfixedPayment.GetPaymentDetails();
     return data;
   }
   static variablePayment(
@@ -25,13 +21,13 @@ export class Solid {
     prestamo: number,
     basepayment: number = 1
   ): PaymentDetail[] {
-    this.NewvariablePayment = new VariablePayment(
+    const NewvariablePayment = new VariablePayment(
       plazo,
       interes,
       prestamo,
       basepayment
     );
-    const data = this.NewvariablePayment.GetPaymentDetails();
+    const data = NewvariablePayment.GetPaymentDetails();
     return data;
   }
   static gracePeriod(
@@ -40,13 +36,13 @@ export class Solid {
     prestamo: number,
     gracePeriod: number
   ): PaymentDetail[] {
-    this.Newgraceperiod = new gracePeriods(
+    const Newgraceperiod = new gracePeriods(
       plazo,
       interes,
       prestamo,
       gracePeriod
     );
-    const data = this.Newgraceperiod.GetPaymentDetails();
+    const data = Newgraceperiod.GetPaymentDetails();
     return data;
   }
   static graceFixedPayment(
@@ -55,13 +51,13 @@ export class Solid {
     prestamo: number,
     gracePeriod: number
   ):  Promise<PaymentDetail[]> {
-    this.Newgraceperiod = new gracePeriods(
+    const Newgraceperiod = new gracePeriods(
       plazo,
       interes,
       prestamo,
       gracePeriod
     );
-    const data = this.Newgraceperiod.GetFixedPayment();
+    const data = Newgraceperiod.GetFixedPayment();
     return data;
   }
   static americanMethod(
@@ -69,8 +65,8 @@ export class Solid {
     interes: number,
     prestamo: number
   ): PaymentDetail[] {
-    this.NewamericanPayment = new AmericanPayment(plazo, interes, prestamo);
-    const data = this.NewamericanPayment.GetPaymentDetails();
+    const NewamericanPayment = new AmericanPayment(plazo, interes, prestamo);
+    const data = NewamericanPayment.GetPaymentDetails();
     return data;
   }
 }

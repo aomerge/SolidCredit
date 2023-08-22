@@ -1,8 +1,8 @@
 {
   "name": "solid-credit",
   "private": false,
-  "version": "2.0.1",
-  "description": "",
+  "version": "2.0.3",
+  "description": "Solid Credit is an advanced tool designed for the precise generation of loan amortization tables. This library encompasses a variety of loan structures, including the French, German, and American systems, in addition to offering options for grace periods.",
   "workspaces": [
     "./src/test",
     "./src/global",
@@ -21,12 +21,38 @@
     "type": "git",
     "url": "git@github.com:A-9571-G/solid-credit.git"
   },
-  "keywords": [],
+  "keywords": [ 
+    "Calculate credit",
+    "Credit",
+    "Solid credit",
+    "grace Periods",
+    "fixed Payment",
+    "variable Payment",
+    "american Payment",
+    "credit",
+    "calculator",
+    "finance",
+    "loan",
+    "interest",
+    "amortization",
+    "principal",
+    "monthly-payment",
+    "interest-rate",
+    "credit-analysis",
+    "loan-calculator",
+    "financial-tool",
+    "mortgage",
+    "lending",
+    "payment-schedule",
+    "debt",
+    "credit-simulator",
+    "banking",
+    "financial-calculator",
+    "credit-tool"
+  ],
   "author": "'Angel Ortega <codenode.ortega@gmail.com>",
   "license": "MIT",
-  "bin": {
-    "solid": "./dist/bin/index.js"
-  },
+  "bin": {},
   "devDependencies": {
     "eslint": "^8.46.0",
     "eslint-config-prettier": "^9.0.0",

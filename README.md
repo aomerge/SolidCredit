@@ -13,31 +13,35 @@ To use the library, you must import the Solid class and create an instance of it
 ```javascript
 import { Solid } from 'solid-credit'
 // structure : (plazo, InteresAnual, Preteamo)
-const data = Solid.fixedPayment((plazo), (InteresAnual), (Preteamo));
 const data2 = Solid.fixedPayment(12, 40, 1000);// return array
 ```
 ### Variable Payment
 ```javascript
 import { Solid } from 'solid-credit'
+// structure : (plazo, InteresAnual, Preteamo)
 // whith basepoint or warrning pais
-const data = Solid.variablePayment((plazo = 12), 15, 1000, let basepoint = 300)// return array
+const data = Solid.variablePayment( 12, 15, 1000, let basepoint = 300)// return array
 // Normal
-const data = Solid.variablePayment((plazo = 12), 15, 1000)// return array
+// structure : (plazo, InteresAnual, Preteamo)
+const data = Solid.variablePayment(12, 15, 1000)// return array
 ```
 ### grace period
 ```javascript
 // Grace period
 import { Solid } from 'solid-credit'
-const data = Solid.gracePeriod((plazo = 12), 15, 1000, 3);// return array
+// structure : (plazo, InteresAnual, Preteamo)
+const data = Solid.gracePeriod(12, 15, 1000, 3);// return array
 
 // Grace period with fixed payment
 import { Solid } from 'solid-credit'
-const data = Solid.graceFixedPayment((plazo = 12), 15, 1000, 3) // return Promise<array>
+// structure : (plazo, InteresAnual, Preteamo)
+const data = Solid.graceFixedPayment( 12, 15, 1000, 3) // return Promise<array>
 ```
 ### American method
 ```javascript
 import { Solid } from 'solid-credit'
-const data = Solid.americanMethod((plazo = 12), 15, 1000)// return array
+// structure : (plazo, InteresAnual, Preteamo)
+const data = Solid.americanMethod(12, 15, 1000)// return array
 ```
 ### Structure of Array
 ```javascript

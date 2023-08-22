@@ -7,28 +7,28 @@ const gracePeriods_model_1 = require("../src/global/model/calculateCredit/graceP
 const americanPayment_model_1 = require("../src/global/model/calculateCredit/americanPayment.model");
 class Solid {
     static fixedPayment(plazo, interes, prestamo) {
-        this.NewfixedPayment = new fixedPayment_model_1.fixedPayment(plazo, interes, prestamo);
-        const data = this.NewfixedPayment.GetPaymentDetails();
+        const NewfixedPayment = new fixedPayment_model_1.fixedPayment(plazo, interes, prestamo);
+        const data = NewfixedPayment.GetPaymentDetails();
         return data;
     }
     static variablePayment(plazo, interes, prestamo, basepayment = 1) {
-        this.NewvariablePayment = new variablePayment_model_1.VariablePayment(plazo, interes, prestamo, basepayment);
-        const data = this.NewvariablePayment.GetPaymentDetails();
+        const NewvariablePayment = new variablePayment_model_1.VariablePayment(plazo, interes, prestamo, basepayment);
+        const data = NewvariablePayment.GetPaymentDetails();
         return data;
     }
     static gracePeriod(plazo, interes, prestamo, gracePeriod) {
-        this.Newgraceperiod = new gracePeriods_model_1.gracePeriods(plazo, interes, prestamo, gracePeriod);
-        const data = this.Newgraceperiod.GetPaymentDetails();
+        const Newgraceperiod = new gracePeriods_model_1.gracePeriods(plazo, interes, prestamo, gracePeriod);
+        const data = Newgraceperiod.GetPaymentDetails();
         return data;
     }
     static graceFixedPayment(plazo, interes, prestamo, gracePeriod) {
-        this.Newgraceperiod = new gracePeriods_model_1.gracePeriods(plazo, interes, prestamo, gracePeriod);
-        const data = this.Newgraceperiod.GetFixedPayment();
+        const Newgraceperiod = new gracePeriods_model_1.gracePeriods(plazo, interes, prestamo, gracePeriod);
+        const data = Newgraceperiod.GetFixedPayment();
         return data;
     }
     static americanMethod(plazo, interes, prestamo) {
-        this.NewamericanPayment = new americanPayment_model_1.AmericanPayment(plazo, interes, prestamo);
-        const data = this.NewamericanPayment.GetPaymentDetails();
+        const NewamericanPayment = new americanPayment_model_1.AmericanPayment(plazo, interes, prestamo);
+        const data = NewamericanPayment.GetPaymentDetails();
         return data;
     }
 }
