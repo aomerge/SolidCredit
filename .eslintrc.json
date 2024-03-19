@@ -1,14 +1,22 @@
 {
-    "root": true,
-    "env": {
-        "browser": true,
-        "amd": true,
-        "node":true,
-        "es6": true
-    },
-    "extends": "",
-    "rules": {
-        "semi": ["error", "always"],
-        "no-unused-vars":"off" 
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": 2023,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
     }
+  },
+  "env": {
+    "browser": true,
+    "amd": true,
+    "node": true,
+    "es6": true
+  },
+  "plugins": ["react"],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "rules": {
+    "semi": ["error", "always"],
+    "no-unused-vars": "off"
+  }
 }

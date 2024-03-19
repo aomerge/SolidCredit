@@ -1,2 +1,23 @@
 node_modules
 package-lock.json
+src
+  app
+    app.component.html
+    app.component.ts
+    app.module.ts
+    app-routing.module.ts
+    app.component.css
+  assets
+    images
+      logo.png
+  environments
+    environment.prod.ts
+    environment.ts
+  index.html
+  main.ts
+  polyfills.ts
+  styles.css
+  test.ts
+  tsconfig.app.json
+  tsconfig.spec.json
+  typings.d.ts

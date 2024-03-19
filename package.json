@@ -21,7 +21,7 @@
     "type": "git",
     "url": "git@github.com:A-9571-G/solid-credit.git"
   },
-  "keywords": [ 
+  "keywords": [
     "Calculate credit",
     "Credit",
     "Solid credit",
@@ -57,8 +57,7 @@
     "eslint": "^8.46.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.34.0",
     "prettier": "^3.0.1"
-  },
-  "dependencies": {
   }
 }
