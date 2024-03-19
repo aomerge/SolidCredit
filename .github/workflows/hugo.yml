@@ -4,7 +4,7 @@ name: Deploy Hugo site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["gh-pages"]
+    branches: ["docs"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -42,7 +42,7 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --minify
+        run: pnpm install && hugo --minify      
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
