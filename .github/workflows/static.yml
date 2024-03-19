@@ -1,4 +1,5 @@
 name: Deploy Hugo to GitHub Pages
+run-name: Deploy Hugo to GitHub Pages
 
 on:
   push:
