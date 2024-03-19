@@ -57,6 +57,9 @@ jobs:
           with:
             name: site
             path: public
+            
+        - name : checkout public
+          run: ls public
 
         - name: Deploy
           uses: peaceiris/actions-gh-pages@v3
