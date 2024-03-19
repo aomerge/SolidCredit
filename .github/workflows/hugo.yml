@@ -38,6 +38,8 @@ jobs:
           node-version: '20'
       - name: Install Hugo
         run: npm install 
+      - name: checkout package.json
+        run: cat package.json        
       - name: Build
         run: npm run build      
 
