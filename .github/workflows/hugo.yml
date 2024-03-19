@@ -24,7 +24,7 @@ concurrency:
 # Default to bash
 defaults:
   run:
-    shell: bash
+    shell: gh-pages
 
 jobs:
   # Build job
