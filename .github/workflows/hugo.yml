@@ -40,7 +40,11 @@ jobs:
         with:
           hugo-version: '0.120.4'
           extended: true
-          
+      - name: node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
       - name: Install
         run: npm install
 
