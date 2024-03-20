@@ -1,5 +1,5 @@
 title = "My Docs"
-baseurl = "./"
+baseurl = "https://aomerge.github.io/SolidCredit/"
 canonifyURLs = false
 disableAliases = true
 disableHugoGeneratorInject = true
