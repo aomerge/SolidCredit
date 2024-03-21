@@ -1,4 +1,4 @@
-title = "My Docs"
+title = "SolidCredit"
 baseurl = "https://aomerge.github.io/SolidCredit/"
 canonifyURLs = false
 disableAliases = true
@@ -6,7 +6,7 @@ disableHugoGeneratorInject = true
 # disableKinds = ["taxonomy", "term"]
 enableEmoji = true
 enableGitInfo = false
-enableRobotsTXT = true
+enableRobotsTXT = true 
 languageCode = "en-US"
 paginate = 10
 rssLimit = 10

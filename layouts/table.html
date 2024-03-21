@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Amortization Table</title>
+    <script></script>
+  </head>
+</html>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Amortization Table Calculator</h2>
+    <label for="loanAmount">Loan Amount:</label>
+    <input type="number" id="loanAmount" value="1000" /><br /><br />
+    <label for="interestRate">Annual Interest Rate (%):</label>
+    <input type="number" id="interestRate" value="5" /><br /><br />
+    <label for="loanTerm">Loan Term (in years):</label>
+    <input type="number" id="loanTerm" value="1" /><br /><br />
+    <label for="paymentType">Payment Type:</label>
+    <select id="paymentType">
+      <option value="fixedPayment">Fixed Payment</option>
+      <option value="variablePayment">Variable Payment</option>
+      <option value="gracePeriod">Grace Period</option>
+      <option value="graceFixedPayment">Grace Period with Fixed Payment</option>
+      <option value="americanMethod">American Method</option></select
+    ><br /><br />
+    <button type="button" id="send">
+      Generate Amortization Table
+    </button>
+    <h3>Amortization Table</h3>
+    <table id="amortizationTable" border="1">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Payment</th>
+          <th>Interest</th>
+          <th>Principal</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script
+      type="modul"
+      src="https://cdn.jsdelivr.net/npm/solid-credit@2.0.3/dist/bin/Solid.bin.min.js"
+    ></script>
+    <script type="module" src="">
+        function generateAmortizationTable() {
+            console.log("Solid");
+            console.log(Solid);
+          var loanAmount = parseFloat(document.getElementById('loanAmount').value);
+          var interestRate = parseFloat(document.getElementById('interestRate').value);
+          var loanTerm = parseInt(document.getElementById('loanTerm').value) * 12; // Convert years to months
+          var paymentType = document.getElementById('paymentType').value;
+          var data;
+          switch(paymentType) {
+              case 'fixedPayment':
+                  data = Solid.fixedPayment(loanTerm, interestRate, loanAmount);
+                  break;
+              case 'variablePayment':
+                  data = Solid.variablePayment(loanTerm, interestRate, loanAmount);
+                  break;
+              case 'gracePeriod':
+                  // Assume a grace period of 3 months for example purposes
+                  data = Solid.gracePeriod(loanTerm, interestRate, loanAmount, 3);
+                  break;
+              case 'graceFixedPayment':
+                  // Assume a grace period of 3 months for example purposes
+                  data = Solid.graceFixedPayment(loanTerm, interestRate, loanAmount, 3);
+                  break;
+              case 'americanMethod':
+                  data = Solid.americanMethod(loanTerm, interestRate, loanAmount);
+                  break;
+          }
+          var tableBody = document.getElementById('amortizationTable').getElementsByTagName('tbody')[0];
+          tableBody.innerHTML = "";  // Clear the table before generating new data
+          data.forEach(function(row, index) {
+              var newRow = tableBody.insertRow();
+              newRow.insertCell(0).innerHTML = index + 1;
+              newRow.insertCell(1).innerHTML = row.payment.toFixed(2);
+              newRow.insertCell(2).innerHTML = row.interest.toFixed(2);
+              newRow.insertCell(3).innerHTML = row.Principal.toFixed(2);
+              newRow.insertCell(4).innerHTML = row.balance.toFixed(2);
+          });
+      }
+        document.getElementById('send').addEventListener('click', generateAmortizationTable());
+
+    </script>
+  </body>
+</html>
